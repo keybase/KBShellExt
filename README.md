@@ -3,7 +3,7 @@ Windows explorer extension for overlaying sync status icons
 
 ![Alt text](/KBShellExt.png?raw=true)
 
-Once built and registered, for each file shown in explorer, this extension will look for a file of the same name ending in ".kbfs_status" and look for a keyword at the top. If "syncing" or "synced" is found, the respective icon will be indicated to Explorer, which will overlay it on the regular icon for that file.
+Once built and registered, for each file shown in explorer, this extension will look for a file of the same name ending in ".kbfs_status" and look for a keyword inside it, at the top. If "syncing" or "synced" is found, the respective icon will be indicated to Explorer, which will overlay it on the regular icon for that file. (The icons used here are placeholders, borrowed from TortoiseGit.)
 
 The COM server has to be registered like any other COM component (e.g. `regsvr32 KBShellExt.dll`, plus additionally a registry key has to be added under the following location for each icon:
 ```
