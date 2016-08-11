@@ -1,0 +1,15 @@
+HKCR
+{
+	NoRemove CLSID
+	{
+		ForceRemove {81482F8D-ACFD-4719-92CF-0C27F10F0644} = s 'SyncingHandler Class'
+		{
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			TypeLib = s '{D78D9B95-947D-4ABA-A837-B67C0FC58D62}'
+			Version = s '1.0'
+		}
+	}
+}

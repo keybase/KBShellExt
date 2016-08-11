@@ -1,0 +1,46 @@
+// KBShellExt.idl : IDL source for KBShellExt
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (KBShellExt.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(8678BA06-4FFE-4E4A-9B23-3CC8D9F697C2),
+	pointer_default(unique)
+]
+interface ISyncedHandler : IUnknown{
+};
+[
+	object,
+	uuid(200D6F5F-384F-4900-B367-2F9221B086BB),
+	pointer_default(unique)
+]
+interface ISyncingHandler : IUnknown{
+};
+[
+	uuid(D78D9B95-947D-4ABA-A837-B67C0FC58D62),
+	version(1.0),
+]
+library KBShellExtLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(33576D3F-02E8-401C-8C0B-CE525E60C5D9)		
+	]
+	coclass SyncedHandler
+	{
+		[default] interface ISyncedHandler;
+	};
+	[
+		uuid(81482F8D-ACFD-4719-92CF-0C27F10F0644)		
+	]
+	coclass SyncingHandler
+	{
+		[default] interface ISyncingHandler;
+	};
+};
+
