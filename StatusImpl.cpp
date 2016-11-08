@@ -17,7 +17,7 @@ HRESULT MatchKBStatus(LPCWSTR pwszPath, CStringA statusA)
 	{
 		return S_FALSE;
 	}
-	// See if this is our extension file
+	// See if this is our extension file - skip it if so
 	if(lstrcmp(pwszPath + (pathlen - extensionlen), KBFS_EXTENSION) == 0)
 	{
 		return S_FALSE;
@@ -44,22 +44,42 @@ HRESULT MatchKBStatus(LPCWSTR pwszPath, CStringA statusA)
 	return S_FALSE;
 }
 
-template<> CStringA StatusImpl<KBStatus::syncing>::GetStatusLabelA()
+template<> CStringA StatusImpl<KBStatus::privateSyncing>::GetStatusLabelA()
 {
-	return CStringA("syncing");
+	return CStringA("private syncing");
 }
 
-template<> CStringA StatusImpl<KBStatus::synced>::GetStatusLabelA()
+template<> CStringA StatusImpl<KBStatus::privateSynced>::GetStatusLabelA()
 {
-	return CStringA("synced");
+	return CStringA("private synced");
 }
 
-template<> int StatusImpl<KBStatus::syncing>::GetIconIndex()
+template<> CStringA StatusImpl<KBStatus::publicSyncing>::GetStatusLabelA()
+{
+	return CStringA("public syncing");
+}
+
+template<> CStringA StatusImpl<KBStatus::publicSynced>::GetStatusLabelA()
+{
+	return CStringA("public synced");
+}
+
+template<> int StatusImpl<KBStatus::privateSyncing>::GetIconIndex()
 {
 	return 1;
 }
 
-template<> int StatusImpl<KBStatus::synced>::GetIconIndex()
+template<> int StatusImpl<KBStatus::privateSynced>::GetIconIndex()
 {
 	return 0;
+}
+
+template<> int StatusImpl<KBStatus::publicSyncing>::GetIconIndex()
+{
+	return 3;
+}
+
+template<> int StatusImpl<KBStatus::publicSynced>::GetIconIndex()
+{
+	return 2;
 }

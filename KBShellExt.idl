@@ -12,14 +12,28 @@ import "ocidl.idl";
 	uuid(8678BA06-4FFE-4E4A-9B23-3CC8D9F697C2),
 	pointer_default(unique)
 ]
-interface ISyncedHandler : IUnknown{
+interface IPublicSynced : IUnknown{
 };
 [
 	object,
 	uuid(200D6F5F-384F-4900-B367-2F9221B086BB),
 	pointer_default(unique)
 ]
-interface ISyncingHandler : IUnknown{
+interface IPublicSyncing : IUnknown{
+};
+[
+	object,
+	uuid(D2D3F899-9131-4AAD-8766-EBA4ECB924F5),
+	pointer_default(unique)
+]
+interface IPrivateSynced : IUnknown{
+};
+[
+	object,
+	uuid(6AEAA9D1-ABC5-4674-A970-883DAA8F5B6D),
+	pointer_default(unique)
+]
+interface IPrivateSyncing : IUnknown{
 };
 [
 	uuid(D78D9B95-947D-4ABA-A837-B67C0FC58D62),
@@ -29,18 +43,32 @@ library KBShellExtLib
 {
 	importlib("stdole2.tlb");
 	[
-		uuid(33576D3F-02E8-401C-8C0B-CE525E60C5D9)		
+		uuid(5C322A44-13C2-4551-96C6-130EC1303409)
 	]
-	coclass SyncedHandler
+	coclass PublicSynced
 	{
-		[default] interface ISyncedHandler;
+		[default] interface IPublicSynced;
 	};
 	[
-		uuid(81482F8D-ACFD-4719-92CF-0C27F10F0644)		
+		uuid(E7D8C67E-1FD5-4082-904E-5DF5D0815A6A)
 	]
-	coclass SyncingHandler
+	coclass PublicSyncing
 	{
-		[default] interface ISyncingHandler;
+		[default] interface IPublicSyncing;
+	};
+	[
+		uuid(AEF9CA2C-7C9D-40A5-8297-A3AB56E6A0ED)		
+	]
+	coclass PrivateSynced
+	{
+		[default] interface IPrivateSynced;
+	};
+	[
+		uuid(17AB4F2D-F9B4-46E4-94D6-CD9F6AD442A9)		
+	]
+	coclass PrivateSyncing
+	{
+		[default] interface IPrivateSyncing;
 	};
 };
 

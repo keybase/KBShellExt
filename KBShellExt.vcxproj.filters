@@ -31,13 +31,19 @@
     <ClCompile Include="KBShellExt_i.c">
       <Filter>Generated Files</Filter>
     </ClCompile>
-    <ClCompile Include="SyncedHandler.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="StatusImpl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SyncingHandler.cpp">
+    <ClCompile Include="PrivateSynced.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PrivateSyncing.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PublicSynced.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PublicSyncing.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -57,13 +63,19 @@
     <ClInclude Include="KBShellExt_i.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
-    <ClInclude Include="SyncedHandler.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="StatusImpl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SyncingHandler.h">
+    <ClInclude Include="PrivateSynced.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PrivateSyncing.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PublicSynced.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PublicSyncing.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -82,10 +94,17 @@
     <None Include="KBShellExt.def">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="SyncedHandler.rgs">
+    <None Include="PrivateSynced.rgs">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="SyncingHandler.rgs">
+    <None Include="PrivateSyncing.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="ClassDiagram.cd" />
+    <None Include="PublicSynced.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="PublicSyncing.rgs">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
@@ -95,10 +114,16 @@
     </Midl>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\..\..\..\..\Program Files\Common Files\KeybaseOverlays\synced.ico">
+    <Image Include="badge-private-synced.ico">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="..\..\..\..\..\..\..\Program Files\Common Files\KeybaseOverlays\syncing.ico">
+    <Image Include="badge-private-syncing.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="badge-public-synced.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="badge-public-syncing.ico">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

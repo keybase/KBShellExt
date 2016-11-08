@@ -1,4 +1,4 @@
-// SyncedHandler.h : Declaration of the CSyncedHandler
+// PrivateSyncing.h : Declaration of the CPrivateSyncing
 
 #pragma once
 #include <Shlobj.h>
@@ -10,7 +10,6 @@
 
 #include "StatusImpl.h"
 
-
 #if defined(_WIN32_WCE) && !defined(_CE_DCOM) && !defined(_CE_ALLOW_SINGLE_THREADED_OBJECTS_IN_MTA)
 #error "Single-threaded COM objects are not properly supported on Windows CE platform, such as the Windows Mobile platforms that do not include full DCOM support. Define _CE_ALLOW_SINGLE_THREADED_OBJECTS_IN_MTA to force ATL to support creating single-thread COM object's and allow use of it's single-threaded COM object implementations. The threading model in your rgs file was set to 'Free' as that is the only threading model supported in non DCOM Windows CE platforms."
 #endif
@@ -18,25 +17,25 @@
 using namespace ATL;
 
 
-// CSyncedHandler
+// CPrivateSyncing
 
-class ATL_NO_VTABLE CSyncedHandler :
+class ATL_NO_VTABLE CPrivateSyncing :
 	public CComObjectRootEx<CComSingleThreadModel>,
-	public CComCoClass<CSyncedHandler, &CLSID_SyncedHandler>,
+	public CComCoClass<CPrivateSyncing, &CLSID_PrivateSyncing>,
 	public IShellIconOverlayIdentifier,
-	public ISyncedHandler
+	public IPrivateSyncing
 {
 public:
-	CSyncedHandler()
+	CPrivateSyncing()
 	{
 	}
 
-DECLARE_REGISTRY_RESOURCEID(IDR_SYNCEDHANDLER)
+DECLARE_REGISTRY_RESOURCEID(IDR_PRIVATESYNCING)
 
-DECLARE_NOT_AGGREGATABLE(CSyncedHandler)
+DECLARE_NOT_AGGREGATABLE(CPrivateSyncing)
 
-BEGIN_COM_MAP(CSyncedHandler)
-	COM_INTERFACE_ENTRY(ISyncedHandler)
+BEGIN_COM_MAP(CPrivateSyncing)
+	COM_INTERFACE_ENTRY(IPrivateSyncing)
 	COM_INTERFACE_ENTRY(IShellIconOverlayIdentifier)
 END_COM_MAP()
 
@@ -60,7 +59,8 @@ public:
 	STDMETHOD(GetPriority)(THIS_ _Out_ int * pIPriority) { return  _status.GetPriority(pIPriority); }
 
 private:
-	StatusImpl<KBStatus::synced> _status;
+	StatusImpl<KBStatus::privateSyncing> _status;
+
 };
 
-OBJECT_ENTRY_AUTO(__uuidof(SyncedHandler), CSyncedHandler)
+OBJECT_ENTRY_AUTO(__uuidof(PrivateSyncing), CPrivateSyncing)

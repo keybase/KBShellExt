@@ -238,6 +238,8 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
       </PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="PrivateSynced.cpp" />
+    <ClCompile Include="PrivateSyncing.cpp" />
     <ClCompile Include="StatusImpl.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -245,17 +247,19 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="SyncedHandler.cpp" />
-    <ClCompile Include="SyncingHandler.cpp" />
+    <ClCompile Include="PublicSynced.cpp" />
+    <ClCompile Include="PublicSyncing.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dllmain.h" />
     <ClInclude Include="KBShellExt_i.h" />
+    <ClInclude Include="PrivateSynced.h" />
+    <ClInclude Include="PrivateSyncing.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="StatusImpl.h" />
     <ClInclude Include="stdafx.h" />
-    <ClInclude Include="SyncedHandler.h" />
-    <ClInclude Include="SyncingHandler.h" />
+    <ClInclude Include="PublicSynced.h" />
+    <ClInclude Include="PublicSyncing.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
@@ -265,17 +269,22 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram.cd" />
     <None Include="KBShellExt.def" />
     <None Include="KBShellExt.rgs" />
-    <None Include="SyncedHandler.rgs" />
-    <None Include="SyncingHandler.rgs" />
+    <None Include="PrivateSynced.rgs" />
+    <None Include="PrivateSyncing.rgs" />
+    <None Include="PublicSynced.rgs" />
+    <None Include="PublicSyncing.rgs" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="KBShellExt.idl" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\..\..\..\..\Program Files\Common Files\KeybaseOverlays\synced.ico" />
-    <Image Include="..\..\..\..\..\..\..\Program Files\Common Files\KeybaseOverlays\syncing.ico" />
+    <Image Include="badge-private-synced.ico" />
+    <Image Include="badge-private-syncing.ico" />
+    <Image Include="badge-public-synced.ico" />
+    <Image Include="badge-public-syncing.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

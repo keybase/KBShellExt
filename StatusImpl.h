@@ -5,7 +5,8 @@ using namespace ATL;
 
 HRESULT MatchKBStatus(LPCWSTR pwszPath, CStringA status);
 
-enum KBStatus { none, synced, syncing };
+enum KBStatus { none, privateSynced, privateSyncing, publicSynced, publicSyncing
+};
 
 template<KBStatus K> class StatusImpl
 {

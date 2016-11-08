@@ -2,7 +2,7 @@ HKCR
 {
 	NoRemove CLSID
 	{
-		ForceRemove {81482F8D-ACFD-4719-92CF-0C27F10F0644} = s 'SyncingHandler Class'
+		ForceRemove {17AB4F2D-F9B4-46E4-94D6-CD9F6AD442A9} = s 'PrivateSyncing Class'
 		{
 			InprocServer32 = s '%MODULE%'
 			{

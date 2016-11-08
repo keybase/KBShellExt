@@ -1,4 +1,4 @@
-// SyncingHandler.h : Declaration of the CSyncingHandler
+// PublicSyncing.h : Declaration of the CPublicSyncing
 
 #pragma once
 #include <Shlobj.h>
@@ -17,25 +17,25 @@
 using namespace ATL;
 
 
-// CSyncingHandler
+// CPublicSyncing
 
-class ATL_NO_VTABLE CSyncingHandler :
+class ATL_NO_VTABLE CPublicSyncing :
 	public CComObjectRootEx<CComSingleThreadModel>,
-	public CComCoClass<CSyncingHandler, &CLSID_SyncingHandler>,
+	public CComCoClass<CPublicSyncing, &CLSID_PublicSyncing>,
 	public IShellIconOverlayIdentifier,
-	public ISyncingHandler
+	public IPublicSyncing
 {
 public:
-	CSyncingHandler()
+	CPublicSyncing()
 	{
 	}
 
-DECLARE_REGISTRY_RESOURCEID(IDR_SYNCINGHANDLER)
+DECLARE_REGISTRY_RESOURCEID(IDR_PUBLICSYNCING)
 
-DECLARE_NOT_AGGREGATABLE(CSyncingHandler)
+DECLARE_NOT_AGGREGATABLE(CPublicSyncing)
 
-BEGIN_COM_MAP(CSyncingHandler)
-	COM_INTERFACE_ENTRY(ISyncingHandler)
+BEGIN_COM_MAP(CPublicSyncing)
+	COM_INTERFACE_ENTRY(IPublicSyncing)
 	COM_INTERFACE_ENTRY(IShellIconOverlayIdentifier)
 END_COM_MAP()
 
@@ -59,8 +59,8 @@ public:
 	STDMETHOD(GetPriority)(THIS_ _Out_ int * pIPriority) { return  _status.GetPriority(pIPriority); }
 
 private:
-	StatusImpl<KBStatus::syncing> _status;
+	StatusImpl<KBStatus::publicSyncing> _status;
 
 };
 
-OBJECT_ENTRY_AUTO(__uuidof(SyncingHandler), CSyncingHandler)
+OBJECT_ENTRY_AUTO(__uuidof(PublicSyncing), CPublicSyncing)
